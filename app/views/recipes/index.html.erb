@@ -1,2 +1,34 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<%# <div id='search-form'>
+  <%= form_tag(root_path, method: :get) do ..
+    <%= search_field_tag :looking_for, nil, placeholder: "recipe Title..." ..
+    <%= submit_tag 'Search', id: 'submit-button' ..
+  <% end ..
+</div> 
+
+<% if @recipes.empty? ..
+
+No recipes found matching '<%= @search_term ..'
+
+<% else %>
+<h1>Recipes for <%= @search_term %> </h1>
+
+
+<table border="1">
+  <tr>
+    <th>Photo</th>
+    <th>Title</th>
+    <th>Ingredients</th>
+    <th></th>
+  </tr>
+  <% @recipes.each do |recipe| %>
+    <tr>
+      <td><%= image_tag(recipe["thumbnail"])%> </td>
+      <td><%= recipe["title"]%> </td>
+      <td><%= recipe["ingredients"] %> </td>
+      
+    </tr>
+   <% end %>
+</table>
+
+
+
