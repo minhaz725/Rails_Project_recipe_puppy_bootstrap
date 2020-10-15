@@ -18,12 +18,12 @@ No recipes found matching '<%= @search_term ..'
     <th>Photo</th>
     <th>Title</th>
     <th>Ingredients</th>
-    <th></th>
   </tr>
   <% @recipes.each do |recipe| %>
     <tr>
-      <td><%= image_tag(recipe["thumbnail"])%> </td>
-      <td><%= recipe["title"]%> </td>
+      <td><%= link_to image_tag(recipe["thumbnail"])%> </td>
+      
+      <td><%= title = sanitize recipe[('title')] %> <%= link_to title %> </td>
       <td><%= recipe["ingredients"] %> </td>
       
     </tr>
