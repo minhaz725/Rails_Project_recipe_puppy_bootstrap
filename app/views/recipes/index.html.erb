@@ -1,15 +1,18 @@
-<%# <div id='search-form'>
-  <%= form_tag(root_path, method: :get) do ..
-    <%= search_field_tag :looking_for, nil, placeholder: "recipe Title..." ..
-    <%= submit_tag 'Search', id: 'submit-button' ..
-  <% end ..
-</div> 
+<div id='search-form'>
+  <%= form_tag(root_path, method: :get) do %>
+    <%= search_field_tag :search, nil, placeholder: "Recipe Title..." %>
+    <%= submit_tag 'Search', id: 'submit-button' %>
+  <% end %>
+</div>
 
-<% if @recipes.empty? ..
+<% if @recipes.empty? %>
 
-No recipes found matching '<%= @search_term ..'
+No recipes found matching '<%= @search_term %>'
 
 <% else %>
+
+
+
 <h1>Recipes for <%= @search_term %> </h1>
 
 
@@ -20,15 +23,17 @@ No recipes found matching '<%= @search_term ..'
     <th>Ingredients</th>
   </tr>
   <% @recipes.each do |recipe| %>
-    <tr>
-      <td><%= link_to image_tag(recipe["thumbnail"])%> </td>
-      
-      <td><%= title = sanitize recipe[('title')] %> <%= link_to title %> </td>
+    <tr class=<%= cycle('even', 'odd') %>>
+      <td><%= link_to image_tag(recipe["thumbnail"] , class: "linked-image")%> </td>
+      <% title = sanitize recipe[('title')] %>
+      <td> <%= link_to title %> </td>
       <td><%= recipe["ingredients"] %> </td>
       
     </tr>
    <% end %>
 </table>
+
+<% end %>
 
 
 
