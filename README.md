@@ -2,7 +2,7 @@
 
 ## Background
 
-[Recipe Puppy website](http://www.recipepuppy.com/)is an ingredient based recipe search engine and discover that they offer an API that returns recipes in JSON format.It:
+[Recipe Puppy website](http://www.recipepuppy.com/) is an ingredient based recipe search engine and discover that they offer an API that returns recipes in JSON format.It:
 
 1. Fetch the recipe information based on a search term entered in the address bar
 2. Display the information in an HTML table - specifically, the **recipe photo**, the **recipe title** (both of which would be links that can take you to the actual recipe) and the **ingredients** required for the recipe.
