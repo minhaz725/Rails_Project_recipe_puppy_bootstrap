@@ -1,4 +1,4 @@
-# Assignment - Recipe Hunter
+# Recipe Hunter
 
 ## Background
 
